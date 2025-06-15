@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/output.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Park Cinema</title>
+</head>
+    <body class="bg-[#373737]">
+        <header class="px-[1rem] flex justify-center items-center duration-200 container md:max-w-[95%] mx-auto bg-transparent">
+            <div class="flex items-center h-[85px] gap-36 max-lg:gap-20 max-md:justify-center w-full">
+                <a href="index.html" title="Home">
+                    <img class="w-[150px] h-[80px]" src="img/logo.svg" alt="Park Cinema logo" />
+                </a>
+                <nav class="max-md:hidden">
+                    <ul class="flex items-center justify-center gap-[60px] max-lg:gap-[40px]">
+                        <li>
+                            <a class="text-[#d9dadb] hover:text-[#D52B1E] duration-300" href="">Kinoteatrlar</a>
+                        </li>
+                        <li>
+                            <a class="text-[#d9dadb] hover:text-[#D52B1E] duration-300" href="">Aksiyalar</a>
+                        </li>
+                        <li>
+                            <a class="text-[#d9dadb] hover:text-[#D52B1E] duration-300" href="">FAQ</a>
+                        </li>
+                        <li>
+                            <a class="text-[#d9dadb] hover:text-[#D52B1E] duration-300" href="">Əlaqə</a>
+                        </li>
+                        <li>
+                            <a class="text-[#d9dadb] hover:text-[#D52B1E] duration-300" href="">Profil</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="max-md:hidden">
+                <select name="lang" class="text-[#d9dadb]">
+                    <option class="text-black">AZE</option>
+                    <option class="text-black">RU</option>
+                    <option class="text-black">EN</option>
+                </select>
+            </div>
+        </header>
+        <main>
+            <div id="loading" class="w-full h-screen flex justify-center items-center bg-black">
+                <img src="img/loading.gif" alt="loading..." />
+            </div>
+            <div id="content" class="hidden">
+                <div class="grid grid-cols-2 max-md:flex max-md:flex-col-reverse gap-5 my-10 h-full max-w-[95%] px-[1rem] mx-auto">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div class="rounded-[30px] overflow-hidden max-lg:hidden" id="filmCover"></div>
+                        <div class="flex flex-col">
+                            <h1 class="text-[#D9DADB] text-xl font-semibold mb mt-2" id="filmName"></h1>
+                            <div class="flex text-[#D9DADB] text-sm items-center gap-0.5 my-2" id="genres"></div>
+                            <p class="text-[#D9DADB] !text-[16px] font-semibold mb-1">Dil</p>
+                            <ul class="flex items-center gap-2 mb-4" id="langs"></ul>
+                            <div class="mb-4">
+                                <p class="text-[#D9DADB] !text-[16px] font-semibold">Altyazı</p>
+                                <ul class="flex items-center gap-2" id="subtitles"></ul>
+                            </div>
+                            <div class="flex flex-col flex-wrap gap-2 max-md:flex-row max-md:justify-between w-full">
+                                <div class="flex flex-1 flex-col gap-2" id="genInfo"></div>
+                                <div class="flex flex-col flex-1 gap-2" id="actorsInfo"></div>
+                            </div>
+                        </div>
+                        <div class="mt-10" id="desc"></div>
+                    </div>
+                    <div class="max-ld:row-span-1">
+                        <div class="w-full aspect-video relative z-10 bg-cover rounded-3xl overflow-hidden" id="yotubeVideo"></div>
+                    </div>                
+                </div>
+                <div class="max-w-[95%] px-[1rem] mx-auto my-10">
+                    <table class="mt-16 w-full border-collapse border-spacing-0 text-center"></table>
+                </div>
+            </div>
+        </main>
+        <footer class="bg-[#86312A] py-8">
+            <div class="max-w-[95%] mx-auto">
+                <ul class="px-[1rem] flex flex-wrap max-sm:flex-col gap-36 max-lg:gap-16 max-md:gap-10">
+                    <li class="flex justify-start items-start md:items-start max-sm:justify-center">
+                        <a href="index.html" class="h-[40px] max-w-[190px]" title="Home">
+                            <img alt="logo" src="img/logo.svg" />
+                        </a>
+                    </li>
+                    <li>
+                        <ul class="flex gap-5 flex-col md:items-start max-sm:items-center">
+                            <li>
+                                <a href="" class="text-[#D9DADB] font-medium text-base hover:text-[#fff] duration-200">Kinoteatrlar</a>
+                            </li>
+                            <li>
+                                <a href="" class="text-[#D9DADB] font-medium text-base hover:text-[#fff] duration-200">Aksiyalar</a>
+                            </li>
+                            <li>
+                                <a href="" class="text-[#D9DADB] font-medium text-base hover:text-[#fff] duration-200">FAQ</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="flex gap-5 flex-col md:items-start max-sm:items-center">
+                            <li>
+                                <a href="" class="text-[#D9DADB] font-medium text-base hover:text-[#fff] duration-200">Profil</a>
+                            </li>
+                            <li>
+                                <a href="" class="text-[#D9DADB] font-medium text-base hover:text-[#fff] duration-200">Əlaqə</a>
+                            </li>
+                            <li>
+                                <a href="" class="text-[#D9DADB] font-medium text-base hover:text-[#fff] duration-200">Hüquqi Şərtlər</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="flex flex-col justify-center max-sm:items-center md:justify-start md:items-start">
+                        <h3 class="text-[#D9DADB] font-medium text-base mb-5 max-xs:text-center">Bizi izləyin</h3>
+                        <ul class="flex gap-5 flex-wrap items-center justify-center">
+                            <li>
+                                <a href="" class="text-[#D9DADB] font-medium text-base">
+                                    <div class="cursor-pointer w-[40px] h-[40px] rounded-full bg-[#D9DADB] flex items-center justify-center">
+                                        <i class="text-[#d52b1e] fa-brands fa-instagram"></i>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="text-[#D9DADB] font-medium text-base">
+                                    <div class="cursor-pointer w-[40px] h-[40px] rounded-full bg-[#D9DADB] flex items-center justify-center">
+                                        <i class="text-[#d52b1e] fa-brands fa-facebook"></i>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="text-[#D9DADB] font-medium text-base">
+                                    <div class="cursor-pointer w-[40px] h-[40px] rounded-full bg-[#D9DADB] flex items-center justify-center">
+                                        <i class="text-[#d52b1e] fa-brands fa-youtube"></i>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="text-[#D9DADB] font-medium text-base">
+                                    <div class="cursor-pointer w-[40px] h-[40px] rounded-full bg-[#D9DADB] flex items-center justify-center">
+                                        <i class="text-[#d52b1e] fa-brands fa-telegram"></i>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="text-[#D9DADB] font-medium text-base">
+                                    <div class="cursor-pointer w-[40px] h-[40px] rounded-full bg-[#D9DADB] flex items-center justify-center">
+                                        <i class="text-[#d52b1e] fa-brands fa-tiktok"></i>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="flex gap-7 items-start max-lg:flex-col max-md:flex-row justify-center">
+                        <img src="img/Visa.svg" class="max-lg:w-[70px] w-[50px] h-[50px]" alt="Visa" />
+                    </li>
+                </ul>
+                <div class="flex items-center justify-between flex-row max-sm:flex-col max-md:gap-4 py-3 px-5">
+                    <h3 class="text-[#D9DADB] text-sm max-sm:mt-4" id="copy"></h3>
+                    <a target="_blank" class="text-[#D9DADB] text-sm max-sm:mt-4 hover:text-[#fff] duration-200" href="">
+                        ESAM Innovations
+                    </a>
+                </div>
+            </div>
+        </footer>
+        <script src="script/info.js"></script>
+        <script src="script/date.js"></script>
+</body>
+</html>
