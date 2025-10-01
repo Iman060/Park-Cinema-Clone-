@@ -24,20 +24,3 @@ Users can browse movies, view detailed info, and book seats online with a smooth
 
 ---
 
-## 📁 Folder Structure
-Park-Cinema/
-├── index.html → Homepage (movie listings)
-├── info.html → Single movie detail page
-├── ticket.html → Seat selection & booking
-│
-├── css/
-│ └── style.css → Main stylesheet
-│
-├── script/
-│ └── main.js → JS logic for loading and interaction
-│
-└── img/ → Movie posters and assets
-
-
----
-
